@@ -50,14 +50,31 @@ button {
 
 .main-top {
   background-color: red;
-  height: 50%;
+  height: 75%;
   width: 100%;
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
+  justify-content: space-around;
 }
 
-.card-wrapper {
+.pokemon-wrapper {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1rem;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.poke-list {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.cards-wrapper {
   width: 100%;
   display: flex;
   background-color: purple;
@@ -71,6 +88,6 @@ button {
 
 .main-bottom {
   background-color: green;
-  height: 50%;
+  height: 25%;
   width: 100%;
 }

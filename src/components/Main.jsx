@@ -1,9 +1,10 @@
 import "./style.css"
-import { useEffect, useState } from "react"
 import Card from "./Card/Card"
+import axios from "axios"
 import PokeInfo from "./PokeInfo/PokeInfo"
 import { BsFillArrowLeftSquareFill } from "react-icons/bs"
 import { BsFillArrowRightSquareFill } from "react-icons/bs"
+import { useState, useEffect } from "react"
 
 function Main() {
   const [pokeData, setPokeData] = useState([])
@@ -14,35 +15,38 @@ function Main() {
 
   async function fetchData() {
     setLoading(true)
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
-    const data = await response.json()
-
-    setNextUrl(data.next)
-    setPrevUrl(data.previous)
-    getPokemon(data.results)
+    const response = await axios.get(url)
+    // console.log(response.data.results)
+    setNextUrl(response.data.next)
+    setPrevUrl(response.data.previous)
+    getPokemon(response.data.results)
     setLoading(false)
+    // console.log(pokeData)
   }
 
-  async function getPokemon(data) {
-    data.map(async(item) => {
-      const response = await fetch(item.url, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-      const data = await response.json()
-      setPokeData(current => {
-        current=[...current, data]
-        return current
+  async function getPokemon(results) {
+    results.map(async (poke) => {
+      const result = await axios.get(poke.url)
+      // console.log(result.data)
+      setPokeData(prev => {
+        prev = [...prev, result.data]
+        prev.sort((a,b) => a.id>b.id?1:-1)
+        return prev
       })
     })
-  } 
+  }
+
+  function nextPage() {
+    if (!nextUrl) return
+    setPokeData([])
+    setUrl(nextUrl)
+  }
+
+  function prevPage() {
+    if (!prevUrl) return
+    setPokeData([])
+    setUrl(prevUrl)
+  }
 
   useEffect(() => {
     fetchData()
@@ -51,12 +55,12 @@ function Main() {
   return <>
     <div className="container">
       <div className="main-top">
-        <div className="card-wrapper">
+        <div className="pokemon-wrapper">
           <Card pokemon={pokeData} loading={loading} />
         </div>
         <div className="btn-nav-group">
-          <button><BsFillArrowLeftSquareFill/></button>
-          <button><BsFillArrowRightSquareFill/></button>
+          <button onClick={prevPage}><BsFillArrowLeftSquareFill/></button>
+          <button onClick={nextPage}><BsFillArrowRightSquareFill/></button>
         </div>
       </div>
       <div className="main-bottom">
