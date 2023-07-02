@@ -59,7 +59,7 @@ button {
 }
 
 .container {
-  height: calc(100vh - 193.81px);
+  height: calc(100vh - 201.4px);
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -122,20 +122,10 @@ button {
 }
 
 .main-bottom {
-  background-color: green;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  place-content: center;
-  align-content: center;
+  background-color: #282c32;
+  color: white;
   height: 35%;
   width: 100%;
-}
-
-.remove-poke-one,
-.remove-poke-two {
-  height: 50px;
-  width: 50px;
-  padding: 0.2rem;
 }
 
 .gen-button-wrapper {

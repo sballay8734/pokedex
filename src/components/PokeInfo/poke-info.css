@@ -1,0 +1,71 @@
+.poke-one-info,
+.poke-two-info {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.comparison {
+  background-color: #3e4652;
+  border-radius: 10px;
+}
+
+.poke-one,
+.poke-two,
+.comparison {
+  height: 100%;
+}
+
+.poke-one,
+.poke-two {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.poke-one-info,
+.poke-two-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+  background-color: var(--color-light);
+  border-radius: 10px;
+  color: black;
+  width: 100%;
+}
+
+.remove-poke-one,
+.remove-poke-two {
+  display: flex;
+  padding: 0.2rem 0.4rem;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(211, 0, 0);
+  border: 2px solid transparent;
+  transition: var(--border-transition);
+}
+
+.remove-poke-one:hover,
+.remove-poke-two:hover {
+  background-color: rgb(161, 0, 0);
+  border: 2px solid rgb(161, 0, 0);
+  transition: var(--border-transition);
+}
+
+.compare-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 100%;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.poke-one-header,
+.poke-two-header {
+  margin-bottom: 1rem;
+}
