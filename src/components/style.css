@@ -1,3 +1,13 @@
+#root {
+  --border-transition: all 300ms ease;
+  --color-primary: #282c32;
+  --color-nav: #aefeff;
+  --color-white: white;
+  --color-light: rgb(221, 221, 221);
+  --color-poke-red-light: #FF0000;
+  --color-poke-red-dark: #CC0000;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -5,6 +15,7 @@
 * {
   margin: 0;
   font: inherit;
+  font-family: 'Poppins', sans-serif;
 }
 
 img, picture, video, canvas, svg {
@@ -22,6 +33,7 @@ html, body {
 
 body {
   line-height: 1.5;
+  background-color: white;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -39,22 +51,35 @@ button {
 	cursor: pointer;
 }
 
-.container {
-  height: 100vh;
-  width: 95%;
-  margin: 0 auto;
-  padding: 1rem;
+.App {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: calc(100vh - 193.81px);
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-top {
-  background-color: red;
-  height: 75%;
+  height: 65%;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  border: 2px solid var(--color-primary);
+  border-radius: 10px;
+  width: 90%;
+  margin-bottom: 1rem;
+  background-color: var(--color-light);
+  overflow: hidden;
 }
 
 .pokemon-wrapper {
@@ -65,7 +90,17 @@ button {
   gap: 1rem;
   width: 100%;
   height: 100%;
-  overflow-y: scroll;
+  position: relative;
+  overflow-y: auto;
+}
+
+.loading {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .poke-list {
@@ -88,6 +123,48 @@ button {
 
 .main-bottom {
   background-color: green;
-  height: 25%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  place-content: center;
+  align-content: center;
+  height: 35%;
   width: 100%;
 }
+
+.remove-poke-one,
+.remove-poke-two {
+  height: 50px;
+  width: 50px;
+  padding: 0.2rem;
+}
+
+.gen-button-wrapper {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--color-primary);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.gen-button {
+  padding: 0 1rem;
+  color: white;
+  background-color: #3f4652;
+  border: 2px solid var(--color-nav);
+  transition: var(--border-transition);
+}
+
+.gen-button.active {
+  background-color: var(--color-nav);
+  color: black;
+}
+
+.gen-button:hover {
+  color: black;
+  background-color: var(--color-light);
+  transition: var(--border-transition);
+}
+
+/* .btn */

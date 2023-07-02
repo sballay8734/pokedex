@@ -2,23 +2,19 @@ import "./style.css"
 import Card from "./Card/Card"
 import axios from "axios"
 import PokeInfo from "./PokeInfo/PokeInfo"
-import { BsFillArrowLeftSquareFill } from "react-icons/bs"
-import { BsFillArrowRightSquareFill } from "react-icons/bs"
 import { useState, useEffect } from "react"
+import apiRoutes from "../data/urlData"
 
 function Main() {
   const [pokeData, setPokeData] = useState([])
   const [loading, setLoading] = useState(true)
-  const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
-  const [nextUrl, setNextUrl] = useState()
-  const [prevUrl, setPrevUrl] = useState()
+  const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/?limit=151")
+  const [active, setActive] = useState("Gen 1")
 
   async function fetchData() {
     setLoading(true)
     const response = await axios.get(url)
     // console.log(response.data.results)
-    setNextUrl(response.data.next)
-    setPrevUrl(response.data.previous)
     getPokemon(response.data.results)
     setLoading(false)
     // console.log(pokeData)
@@ -36,31 +32,28 @@ function Main() {
     })
   }
 
-  function nextPage() {
-    if (!nextUrl) return
-    setPokeData([])
-    setUrl(nextUrl)
-  }
-
-  function prevPage() {
-    if (!prevUrl) return
-    setPokeData([])
-    setUrl(prevUrl)
+  function handleGenSelect(route) {
+    setUrl(route.route)
+    setActive(route.title)
   }
 
   useEffect(() => {
+    setPokeData([])
     fetchData()
   }, [url])
 
   return <>
     <div className="container">
       <div className="main-top">
+        <div className="gen-button-wrapper">
+          {
+            apiRoutes.map((route) => {
+              return <button onClick={() => handleGenSelect(route)} key={route.route} className={`gen-button ${active === route.title ? "active" : ""}`}>{route.title}</button>
+            })
+          }
+        </div>
         <div className="pokemon-wrapper">
           <Card pokemon={pokeData} loading={loading} />
-        </div>
-        <div className="btn-nav-group">
-          <button onClick={prevPage}><BsFillArrowLeftSquareFill/></button>
-          <button onClick={nextPage}><BsFillArrowRightSquareFill/></button>
         </div>
       </div>
       <div className="main-bottom">
