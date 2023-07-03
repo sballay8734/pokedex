@@ -3,11 +3,10 @@ import "./compare-table.css"
 function CompareTable({pokeOne, pokeTwo}) {
   console.log(pokeOne)
   const pokeOneStat = 156
-  const pokeTwoStat = 110
+  const pokeTwoStat = 90
 
   return (
     <div className="table-wrapper">
-      {/* <div style={{width: `${testWidth}px`}} className="progress-bar"></div> */}
       <div className="row">
         <div className="stat poke-one-stat">
           <div className="poke-one-stat-value">{pokeOneStat}</div>
