@@ -9,6 +9,7 @@
 
 .comparison {
   background-color: #3e4652;
+  max-height: 280px;
   border-radius: 10px;
 }
 
@@ -36,6 +37,7 @@
   background-color: var(--color-light);
   border-radius: 10px;
   color: black;
+  max-height: 230px;
   width: 100%;
 }
 
@@ -59,7 +61,8 @@
 
 .compare-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
+  place-content: center;
   height: 100%;
   gap: 1rem;
   padding: 1rem;
@@ -68,4 +71,5 @@
 .poke-one-header,
 .poke-two-header {
   margin-bottom: 1rem;
+  border-bottom: 1px solid white;
 }

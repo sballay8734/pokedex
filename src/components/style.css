@@ -153,8 +153,28 @@ button {
 
 .gen-button:hover {
   color: black;
-  background-color: var(--color-light);
+  background-color: white;
   transition: var(--border-transition);
 }
 
-/* .btn */
+@media screen and (max-width: 985px) {
+  .gen-button {
+    font-size: 0.8rem;
+  }
+  .gen-button-wrapper {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .pokemon-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media screen and (max-width: 520px) {
+  .pokemon-wrapper {
+    grid-template-columns: 1fr;
+  }
+}

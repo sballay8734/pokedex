@@ -1,0 +1,4 @@
+1. Add responsiveness
+2. When selecting a pokemon with a long name, comparison overflows
+3. Stat bars don't scale well (at small screens, a stat of 70 fills whole bar)
+4. When no pokemon are selected, height of bottom changes on select.

@@ -3,7 +3,7 @@ import { PokemonContext } from "../../context/SelectedPokemon"
 import { useContext } from "react"
 
 function Card({pokemon, loading}) {
-  const {pokeOne, pokeTwo, setPokeOne, setPokeTwo} = useContext(PokemonContext)
+  const {pokeOne, setPokeOne, setPokeTwo} = useContext(PokemonContext)
 
   function handlePokeSelect(poke) {
     if (pokeOne) {
@@ -11,7 +11,6 @@ function Card({pokemon, loading}) {
     } else {
       setPokeOne(poke)
     }
-    console.log("Poke One", pokeOne, "Poke Two", pokeTwo)
   }
 
   return <>

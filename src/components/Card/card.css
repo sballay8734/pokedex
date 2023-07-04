@@ -196,6 +196,37 @@
   transition: var(--border-transition);
 }
 
+@media screen and (max-width: 928px) {
+  .card {
+    width: 200px
+  }
+}
+@media screen and (max-width: 760px) {
+  .card {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 630px) {
+  .card {
+    width: 200px;
+  }
+}
+@media screen and (max-width: 520px) {
+  .card {
+    width: 300px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .card {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 318px) {
+  .card {
+    width: 225px;
+  }
+}
+
 @keyframes card-transition {
   from {
     opacity: 0;
