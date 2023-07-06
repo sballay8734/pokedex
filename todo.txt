@@ -1,4 +1,7 @@
-1. Add responsiveness
-2. When selecting a pokemon with a long name, comparison overflows
-3. Stat bars don't scale well (at small screens, a stat of 70 fills whole bar)
+1. Add responsiveness.
+2. When selecting a pokemon with a long name, comparison overflows.
+3. Modify how stat bar width is calculated.
 4. When no pokemon are selected, height of bottom changes on select.
+5. Add sort by alphabetical.
+6. Add remove-pokemon button for smaller screens.
+7. Add absolute pokemon image for smaller screens.

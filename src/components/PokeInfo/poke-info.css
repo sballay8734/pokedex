@@ -73,3 +73,44 @@
   margin-bottom: 1rem;
   border-bottom: 1px solid white;
 }
+
+@media screen and (max-width: 700px) {
+  .compare-wrapper {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+  .poke-one-name,
+  .poke-two-name {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 630px) {
+  .compare-wrapper {
+    grid-template-columns: 1fr 4fr 1fr;
+  }
+  .poke-one-header,
+  .poke-two-header {
+    font-size: 0.8rem;
+  }
+  .remove-poke-one,
+  .remove-poke-two {
+    font-size: 0.8rem;
+  }
+  .poke-one-info img,
+  .poke-two-info img {
+    height: 60px;
+    width: 60px;
+  }
+}
+@media screen and (max-width: 615px) {
+  .poke-one,
+  .poke-two {
+    display: none;
+  }
+  .compare-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .poke-one-name,
+  .poke-two-name {
+    font-size: 1rem;
+  }
+}

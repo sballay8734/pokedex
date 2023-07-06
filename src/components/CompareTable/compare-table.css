@@ -122,6 +122,12 @@
   animation: fade-in-right-bar 300ms linear;
 }
 
+@media screen and (max-width: 615px) {
+  .table-wrapper {
+    min-height: 225px;
+  }
+}
+
 @keyframes fade-in-left-bar {
   from {
     transform: translateX(135px);

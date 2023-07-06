@@ -1,7 +1,8 @@
+import { useState } from "react"
 import "./compare-table.css"
 
 function CompareTable({pokeOne, pokeTwo}) {
-  console.log(pokeOne)
+  const [screenSize, setScreenSize] = useState(window.innerWidth)
 
   return (
     <div className="table-wrapper">
@@ -24,7 +25,9 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-one-stat">
           <div
             key={pokeOne}
-            style={{ width: `${pokeOne?.stats[0].base_stat / 1.3}px` }}
+            style={{
+              width: `${pokeOne?.stats[0].base_stat / (screenSize / 300)}px`
+            }}
             className="poke-one-bar"
           ></div>
         </div>
@@ -40,7 +43,9 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-two-stat">
           <div
             key={pokeTwo}
-            style={{ width: `${pokeTwo?.stats[0].base_stat / 1.3}px` }}
+            style={{
+              width: `${pokeTwo?.stats[0].base_stat / (screenSize / 300)}px`
+            }}
             className="poke-two-bar"
           ></div>
         </div>
@@ -50,7 +55,7 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-one-stat">
           <div
             key={pokeOne}
-            style={{ width: `${pokeOne?.stats[1].base_stat / 1.3}px` }}
+            style={{ width: `${pokeOne?.stats[1].base_stat / (screenSize / 300)}px` }}
             className="poke-one-bar"
           ></div>
         </div>
@@ -66,7 +71,7 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-two-stat">
           <div
             key={pokeTwo}
-            style={{ width: `${pokeTwo?.stats[1].base_stat / 1.3}px` }}
+            style={{ width: `${pokeTwo?.stats[1].base_stat / (screenSize / 300)}px` }}
             className="poke-two-bar"
           ></div>
         </div>
@@ -76,7 +81,7 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-one-stat">
           <div
             key={pokeOne}
-            style={{ width: `${pokeOne?.stats[2].base_stat / 1.3}px` }}
+            style={{ width: `${pokeOne?.stats[2].base_stat / (screenSize / 300)}px` }}
             className="poke-one-bar"
           ></div>
         </div>
@@ -92,7 +97,7 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-two-stat">
           <div
             key={pokeTwo}
-            style={{ width: `${pokeTwo?.stats[2].base_stat / 1.3}px` }}
+            style={{ width: `${pokeTwo?.stats[2].base_stat / (screenSize / 300)}px` }}
             className="poke-two-bar"
           ></div>
         </div>
@@ -102,7 +107,7 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-one-stat">
           <div
             key={pokeOne}
-            style={{ width: `${pokeOne?.stats[3].base_stat / 1.3}px` }}
+            style={{ width: `${pokeOne?.stats[3].base_stat / (screenSize / 300)}px` }}
             className="poke-one-bar"
           ></div>
         </div>
@@ -118,7 +123,7 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-two-stat">
           <div
             key={pokeTwo}
-            style={{ width: `${pokeTwo?.stats[3].base_stat / 1.3}px` }}
+            style={{ width: `${pokeTwo?.stats[3].base_stat / (screenSize / 300)}px` }}
             className="poke-two-bar"
           ></div>
         </div>
@@ -128,7 +133,7 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-one-stat">
           <div
             key={pokeOne}
-            style={{ width: `${pokeOne?.stats[4].base_stat / 1.3}px` }}
+            style={{ width: `${pokeOne?.stats[4].base_stat / (screenSize / 300)}px` }}
             className="poke-one-bar"
           ></div>
         </div>
@@ -144,7 +149,7 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-two-stat">
           <div
             key={pokeTwo}
-            style={{ width: `${pokeTwo?.stats[4].base_stat / 1.3}px` }}
+            style={{ width: `${pokeTwo?.stats[4].base_stat / (screenSize / 300)}px` }}
             className="poke-two-bar"
           ></div>
         </div>
@@ -154,7 +159,7 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-one-stat">
           <div
             key={pokeOne}
-            style={{ width: `${pokeOne?.stats[5].base_stat / 1.3}px` }}
+            style={{ width: `${pokeOne?.stats[5].base_stat / (screenSize / 300)}px` }}
             className="poke-one-bar"
           ></div>
         </div>
@@ -170,7 +175,7 @@ function CompareTable({pokeOne, pokeTwo}) {
         <div className="stat poke-two-stat">
           <div
             key={pokeTwo}
-            style={{ width: `${pokeTwo?.stats[5].base_stat / 1.3}px` }}
+            style={{ width: `${pokeTwo?.stats[5].base_stat / (screenSize / 300)}px` }}
             className="poke-two-bar"
           ></div>
         </div>
