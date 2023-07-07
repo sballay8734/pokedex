@@ -196,6 +196,18 @@
   transition: var(--border-transition);
 }
 
+@media screen and (max-width: 1195px) {
+  .card {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 972px) {
+  .card {
+    width: 250px;
+  }
+}
+
 @media screen and (max-width: 928px) {
   .card {
     width: 200px

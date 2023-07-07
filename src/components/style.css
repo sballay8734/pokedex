@@ -60,7 +60,7 @@ button {
 }
 
 .container {
-  height: calc(100vh - 201.4px);
+  height: calc(100vh - 199.4px);
   min-height: 600px;
   width: 100%;
   margin: 0 auto;
@@ -95,7 +95,7 @@ button {
 .pokemon-wrapper {
   display: grid;
   place-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 1rem;
   gap: 0.5rem;
   width: 100%;
@@ -158,6 +158,12 @@ button {
   color: black;
   background-color: white;
   transition: var(--border-transition);
+}
+
+@media screen and (max-width: 972px) {
+  .pokemon-wrapper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 @media screen and (max-width: 985px) {
