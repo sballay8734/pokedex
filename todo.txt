@@ -5,3 +5,5 @@
 5. Add sort by alphabetical.
 6. Add remove-pokemon button for smaller screens.
 7. Add absolute pokemon image for smaller screens.
+8. On select, poke should be set.
+9. Top section collapses when loading new gen. This should not happen.
