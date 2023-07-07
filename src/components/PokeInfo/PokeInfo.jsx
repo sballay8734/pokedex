@@ -20,7 +20,7 @@ function PokeInfo() {
         </div> : <div className="poke-one-info">Select a Pokemon above</div>}
       </div>
       <div className="comparison">
-        <CompareTable pokeOne={pokeOne} pokeTwo={pokeTwo} />
+        <CompareTable pokeOne={pokeOne} pokeTwo={pokeTwo} setPokeOne={setPokeOne} setPokeTwo={setPokeTwo} />
       </div>
       <div className="poke-two">
         <h1 className="poke-two-header">Pokemon Two</h1>

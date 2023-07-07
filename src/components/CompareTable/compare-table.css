@@ -17,6 +17,42 @@
 .poke-one-name,
 .poke-two-name {
   font-weight: 600;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  position: relative;
+}
+
+.small-screen-remove-one {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: red;
+  background-color: white;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: var(--border-transition);
+}
+.small-screen-remove-two {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  color: red;
+  background-color: white;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: var(--border-transition);
+}
+
+.small-screen-remove-one:hover,
+.small-screen-remove-two:hover {
+  background-color: red;
+  color: white;
+  transition: var(--border-transition);
 }
 
 .stat-header {
@@ -125,6 +161,10 @@
 @media screen and (max-width: 615px) {
   .table-wrapper {
     min-height: 225px;
+  }
+  .small-screen-remove-one,
+  .small-screen-remove-two {
+    display: block;
   }
 }
 
