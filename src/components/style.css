@@ -84,6 +84,7 @@ button {
   margin-bottom: 1rem;
   background-color: var(--color-light);
   overflow: hidden;
+  max-width: 1300px;
 }
 
 .sort-dropdown-wrapper {
@@ -139,6 +140,7 @@ button {
   background-color: #282c32;
   color: white;
   width: 100%;
+  max-width: 1500px;
 }
 
 .pokemon-wrapper {
@@ -234,5 +236,12 @@ button {
 @media screen and (max-width: 520px) {
   .pokemon-wrapper {
     grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .main-bottom {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
 }
