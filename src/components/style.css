@@ -2,6 +2,7 @@
   --border-transition: all 300ms ease;
   --color-primary: #282c32;
   --color-nav: #aefeff;
+  --color-nav-dark: #00a9ac;
   --color-white: white;
   --color-light: rgb(221, 221, 221);
   --color-poke-red-light: #FF0000;
@@ -54,7 +55,7 @@ button {
 .App {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   overflow: auto;
 }
@@ -66,13 +67,13 @@ button {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   /* overflow: auto; */
 }
 
 .main-top {
-  /* height: 65%; */
+  position: relative;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -85,10 +86,58 @@ button {
   overflow: hidden;
 }
 
+.sort-dropdown-wrapper {
+  padding: 0.5rem 0;
+  background-color: var(--color-nav);
+  border-bottom: 2px solid black;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  transition: var(--border-transition);
+}
+
+.sort-dropdown {
+  border: 1px solid black;
+  padding: 0 0.2rem 0 0.5rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: var(--border-transition);
+}
+
+.sort-dropdown:hover {
+  background-color: rgb(255, 255, 255);
+  transition: var(--border-transition);
+}
+
+.sort-methods {
+  display: flex;
+  gap: 0.5rem;
+  transition: var(--border-transition);
+}
+
+.sort-method {
+  border: 2px solid black;
+  border-radius: 3px;
+  padding: 0 0.3rem;
+  cursor: pointer;
+  transition: var(--border-transition);
+}
+.sort-method:hover {
+  background-color: var(--color-nav-dark);
+  transition: var(--border-transition);
+}
+
+.sort-method.active {
+  background-color: var(--color-primary);
+  color: white;
+  transition: var(--border-transition);
+}
+
 .main-bottom {
   background-color: #282c32;
   color: white;
-  /* height: 35%; */
   width: 100%;
 }
 

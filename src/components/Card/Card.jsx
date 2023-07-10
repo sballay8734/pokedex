@@ -13,8 +13,7 @@ function Card({pokemon, loading}) {
           <div onClick={() => handlePokeSelect(poke)} key={poke.id} className={`card ${poke.types[0].type.name}`}>
             <div className="card-left">
               <h3 className="poke-id">#{poke.id}</h3>
-              {/* <h3 className="poke-gen">#{poke.id}</h3> */}
-              <h3 className={`poke-name ${poke.name.length > 9 ? "long" : ""}`}>{
+              <h3 className={`poke-name ${poke.name.length > 8 ? "long" : ""}`}>{
                 `${poke.name[0].toUpperCase() + poke.name.substring(1)}`
                 }</h3>
               <h3 className="poke-types">{poke.types.map((type) => {

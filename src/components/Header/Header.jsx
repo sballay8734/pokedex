@@ -11,7 +11,6 @@ function Header() {
   const [dropdownIsOpen, setDropdownIsOpen] = useState(false)
   const [filteredPokemon, setFilteredPokemon] = useState([])
   const { handlePokeSelect } = useContext(PokemonContext)
-  const {pokeImg} = useContext(PokemonContext)
 
   useEffect(() => {
     window.addEventListener('click', closeDropdown)
@@ -32,6 +31,19 @@ function Header() {
     setDropdownIsOpen(true)
     setInput(value)
     fetchData(value.toLowerCase())
+  }
+
+  async function handleKeyPress(e, pokemon) {
+    if (e.key==="Enter") {
+      setDropdownIsOpen(false)
+      setInput("")
+      await fetch(pokemon.url)
+      .then((response) => response.json())
+      .then((json) => {
+        handlePokeSelect(json)
+        return json
+    })
+    } else return
   }
 
   function fetchData(value) {
@@ -60,10 +72,10 @@ function Header() {
     <h3 className="header-h3">Click on the pokemon to compare their stats</h3>
     <div className="input-wrapper">
       <FaSearch id="search-icon" />
-      <input value={input} onChange={(e) => handleChange(e.target.value)} className="poke-search" placeholder="Type to search..." type="text" />
+      <input tabIndex={0} value={input} onChange={(e) => handleChange(e.target.value)} className="poke-search" placeholder="Type to search..." type="text" />
       <div className={`filtered-pokemon ${dropdownIsOpen ? "show" : ""}`}>
         {filteredPokemon.map((pokemon) => {
-          return <li key={pokemon.name} onClick={() => handlePokeClick(pokemon)} className="filtered-poke">{pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}</li>
+          return <li tabIndex={0} key={pokemon.name} onClick={() => handlePokeClick(pokemon)} onKeyDown={(e) => handleKeyPress(e, pokemon)} className="filtered-poke">{pokemon.name[0].toUpperCase() + pokemon.name.substring(1)}</li>
         })}
       </div>
     </div>

@@ -16,11 +16,22 @@
 
 .poke-one-name,
 .poke-two-name {
+  font-size: 0.9rem;
   font-weight: 600;
   display: flex;
   width: 100%;
   justify-content: center;
   position: relative;
+}
+
+.poke-one-name.large,
+.poke-two-name.large {
+  font-size: 0.8rem;
+}
+
+.poke-one-name.xl,
+.poke-two-name.xl {
+  font-size: 0.6rem;
 }
 
 .small-screen-remove-one {
@@ -162,10 +173,16 @@
   .table-wrapper {
     min-height: 225px;
   }
-  .small-screen-remove-one,
+  .poke-one-name,
+  .poke-two-name {
+    font-size: 0.6rem;
+  }
+
+  /* .small-screen-remove-one,
   .small-screen-remove-two {
     display: block;
-  }
+    font-size: 1rem;
+  } */
 }
 
 @keyframes fade-in-left-bar {

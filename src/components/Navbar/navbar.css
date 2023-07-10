@@ -1,5 +1,5 @@
 .navbar {
-  background-color: var(--color-nav);
+  background-color: var(--color-primary);
   height: 60px;
   width: 100%;
   position: fixed;
@@ -7,6 +7,26 @@
   top: 0;
   left: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding: 0 1rem;
   align-items: center;
+}
+
+.logo {
+  color: white;
+  font-size: 6rem;
+}
+
+.reset {
+  background-color: rgb(214, 0, 0);
+  padding: 0.1rem 0.4rem;
+  border: 2px solid rgb(108, 0, 0);
+  cursor: pointer;
+  transition: var(--border-transition);
+}
+
+.reset:hover {
+  background-color: rgb(68, 0, 0);
+  color: white;
+  transition: var(--border-transition);
 }
